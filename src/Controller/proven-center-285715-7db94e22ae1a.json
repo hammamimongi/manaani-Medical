@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proven-center-285715",
+  "private_key_id": "7db94e22ae1a1663d4fd81cfacfec2429c62766a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC05r2eUha392Pq\nr+wCv/3jFw3IDvb2PN3ly2XVKhzYRaL/hCfob6zCVQZdHaBHzBlifEUH+VM7YDXI\niOEpT+oVBFjFNUKMyRh0oPNMofPLVqpCjhbvl8fUE5a1FeGahRvLoQlh3gwtN7Yx\n2riXeKCNrJnB2291HfDXoGBCm3OnJ8yMaGXV4ke8YOVdzD/g7zmjTnTUr+mxTRwV\n/0Q4pPq1GRDFuQphtHtzNtxS09P12rr4cYFUUSOSK+1cPeFfNai7/vZhmhG3adfa\npKCJkLK4pfZHlwrw5V7KS3rV46MIVsdaxSCw7oKaazTlkrHOeRqEcnucu9neJMM2\ncfC/CdbzAgMBAAECggEAHetz5+A9MFwobcPUTc13WRHnuPOmAP/8K2pCrh5IUF+O\nyqK5qbCewDLT2fQbyFmHcUngblCHEEZPXvAqCBfW6CGklP7EF7OYPzdHm6BwSWyi\nEwlGiIYatNwwjEQm4NRXI+IUl9fj566pNwGtOiWSAxyi/vR4226s9jI+TttAe6Ag\nUvg+xims0kgQp1uxIuqf9k3wKEAto/aQkxrZcr/1PmTjRluYhEpd8sOkLYE+rpvN\ntsS8iaqLf9eshnrEpLanbl9zkxdyJcz7SYxEL3A8ZiZO7y6NDFjN86UqyDjnsh9H\nM7iNjkr/xvMV0+TS7iA20iyflERCdjRkWn3d/sHUQQKBgQDYEzIGGysS1As8AjDX\n8RWN8FPerkaVmMlQaglCF9+QeYxMiqQm/qq2WsilC+LjQcQhGOqfkh6/aShC37IG\nGTfeKDlz39O1NMtQa6vgUJ/dhVUrkuZbmdh/CI6KvCzYrNE+9VjrmauHXlkAG2GY\nP7ILHp8y25GKlst1FI/01O5/EQKBgQDWU8HNltZwAAKVfEEYlTYS5vi7wryjdq57\n0fu5+kHBHyR+j4icKJpWBLIiRwydornGo4b+IzVe/JXZzAdVtDlN8jCgCC7A91e6\nn8bAKppNK1DsdayyKzAWvm/G1MYElxgKmbvY+kcKvqwcuVA5Z0cLsD/6hwm/T1/b\nlNkz15g9wwKBgHOaOX5I1M+7ANO3PFicFHMfLFAMH5lz5+kNAi0JRsQuM6DT4CU4\nxS7Q/V5IMLhzfDJU+VosPCUeZrr4oW9f2KMUFEDpdIQTXd+F66wUlqNW7Y1lh7dk\nZQ76DgEt0jSOqVisvUk3qyy+jpFfFOT21xPZ60SzcneaW/ok6SwNLBhxAoGBAKwn\nMLdTXkEuMOUjniIB0CJUthwS6nSeYr6ARyL2OhTGUAj8f613C6jmMrNHwIFp8LD2\nLvs5CqiWWENOF+ImVhUe4SHaELvcsPHtXraCQdiUX3bfemzONd0+8AeUZs3PE3eI\nTpOVTLT7vMGBtEe3hiCEXI9+Ij0xo3x7zg9PMDEDAoGAJEAeTxOCIlGDS9bpNLcf\n24J0Ti2Ws8ryFIjpqabvfxtpE2qAgKTe5waHZYFIqfhSwx5q3xfwe6irKwUvKTOg\naN2qmq0DSt35QpE9PX5EUeolaizpm5f/7S8beYTFOrL9CVXS9DainKza/11SxFKU\nq1U+x4Luurpntwm8AI7HyH0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "manaaniapi@proven-center-285715.iam.gserviceaccount.com",
+  "client_id": "116843413270560980326",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/manaaniapi%40proven-center-285715.iam.gserviceaccount.com"
+}

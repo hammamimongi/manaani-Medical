@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+{% block bodyStyle %}style="background-color:#FFFFFF;"{% endblock %}
+
+{% block navAcc %}nav-item{% endblock %}
+{% block navSignIn %}"nav-item active"{% endblock %}
+{% block BoxOx %}
+    <div class="container-fluid login-form" style="padding-top: 20px ">
+        <div class="row">
+            <div class="d-flex align-items-center col-xs-12 col-sm-12 col-md-5 left-side-signup">
+                <form class="col-md-12" action="{{ path('login') }}" method="post">
+                    <h1 class="Login-titre">Se connecter</h1>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="">Adresse email</label>
+                            <input type="text" class="form-control" placeholder="Entrer votre Adresse email" required name="_username">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <input type="password" id="password-field" class="form-control" placeholder="Entrer votre mot de passe" required name="_password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-btn">
+                            <button type="submit" class="col btn btn-primary">Se connecter</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12" style="display: flex;">
+                            <a class="col-md-12 mdp-ob" href="">Mot de passe oublié ?</a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12" style="display: flex;">
+                            <h6 class="text-login-bottom">Vous n'êtes pas inscrit ?</h6>
+                            <a class="link-signin" href="">S'inscrire</a>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-7 right-side-signup">
+                <img class="col-xs-12 col-sm-12 col-md-12"src="assets/undraw_social_distancing_2g0u.svg">
+                <span class="d-flex justify-content-end text-signIn">صحتي وصحتك امانة في بلاد ردوها جبانة </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

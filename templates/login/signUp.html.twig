@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'inscrire{% endblock %}
+
+{% block bodyStyle %}style="background-color:#FFFFFF;"{% endblock %}
+
+{% block navAcc %}nav-item{% endblock %}
+{% block BoxOx %}
+    <div class="container-fluid login-form" style="padding-top: 100px ">
+        <div class="row">
+            <div class="d-flex align-items-center col-xs-12 col-sm-12 col-md-5 left-side-signup">
+
+                {{ form_start(form, {'attr':{'novalidate':'novalidate'}})}}
+                    <h1 class="Login-titre">Se connecter</h1>
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_widget(form.nom, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.nom, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                        <div class="form-group col">
+                            {{ form_label(form.prenom, "prenom") }}
+                            {{ form_widget(form.prenom, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.prenom, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_label(form.mail, "mail") }}
+                            {{ form_widget(form.mail, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.mail, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_label(form.password, "password") }}
+                            {{ form_widget(form.password, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.password, {'attr': {'class': 'erreurForm'}}) }}
+
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="form-group col">
+                        {{ form_label(form.confirmPassword, "confirmPassword") }}
+                        {{ form_widget(form.confirmPassword, {'attr': {'class': 'form-control' }}) }}
+                        {{ form_errors(form.confirmPassword, {'attr': {'class': 'erreurForm'}}) }}
+
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_label(form.numTel, "numTel") }}
+                            {{ form_widget(form.numTel, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.numTel, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                        <div class="form-group col">
+                            {{ form_label(form.pdp, "numTel") }}
+                            {{ form_widget(form.pdp, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.pdp, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-btn">
+                            {{ form_widget(form.Ajouter, {'attr': {'class': 'col btn btn-primary' }}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12" style="display: flex;">
+                            <h6 class="text-login-bottom">Vous êtes déjà inscrit ?</h6>
+                            <a class="link-signin" href="{{ path('login') }}">Se connecter</a>
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-7 right-side-signup">
+                <img class="col-xs-12 col-sm-12 col-md-12"src="assets/undraw_medicine_b1ol.svg">
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css" media="all">
+    <link rel="stylesheet" href="../assets/icon/css/all.min.css" media="all">
+    <link rel="stylesheet" href="../assets/icon/css/brands.min.css" media="all">
+    <link rel="stylesheet" href="../assets/icon/css/v4-shims.min.css" media="all">
+    <link rel="stylesheet" href="../assets/icon/css/all.min.css" media="all">
+    <link rel="stylesheet" href="../assets/icon/css/fontawesome.css" media="all">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
+{% endblock %}
+
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script src="../assets/icon/js/all.min.js"></script>
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.validate.min.js"></script>
+            <script src="../assets/js/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="../assets/js/manaaniFnct.js"></script>
+            <script src="../assets/js/main.js"></script>
+
+        {% endblock %}
+
+{% block title %}oxygene{% endblock %}
+
+{% block navOx %}"nav-item active"{% endblock %}
+
+{% block navUserImagePdpPtofil %}
+    src="../assets/image/{{ User.pdp }}"
+{% endblock %}
+
+
+
+    {% block navUserNamePtofil %}
+        {% if User.prenom >9%}
+            {{ User.nom|capitalize |slice(0, 195) }}
+        {% else %}
+            {{ User.name }}
+        {% endif %}
+
+    {% endblock %}
+{% block textPub %}
+    <h2 class="PubText">Filter par </h2>
+
+
+    <form method="get" action="oxygeneFiltre/filtreBy" class="d-flex formFilter" >
+        <select name="Gouvernerat" class="col-md-3 form-control inputFilter">
+            <option disabled selected value>Gouvernerat</option>
+            <option value="">Tous</option>
+            <option value="Grand Tunis">Grand Tunis</option>
+            <option value="Béja">Béja</option>
+            <option value="Bizerte">Bizerte</option>
+            <option value="Gabés">Gabés</option>
+            <option value="Gafsa">Gafsa</option>
+            <option value="Jendouba">Jendouba</option>
+            <option value="Kairouan">Kairouan</option>
+            <option value="Kasserine">Kasserine</option>
+            <option value="Kébili">Kébili</option>
+            <option value="Kef">Kef</option>
+            <option value="Mahdia">Mahdia</option>
+            <option value="Médenin">Médenin</option>
+            <option value="Montastir">Montastir</option>
+            <option value="Nabeul">Nabeul</option>
+            <option value="Sfax">Sfax</option>
+            <option value="Sidi Bouzid">Sidi Bouzid</option>
+            <option value="Siliana">Siliana</option>
+            <option value="Sousse">Sousse</option>
+            <option value="Tataouine">Tataouine</option>
+            <option value="Tozuer">Tozuer</option>
+            <option value="Zaghouan">Zaghouan</option>
+        </select>
+        <button class="col-md-2 btn btn-primary">Filter</button>
+    </form>
+
+
+{% endblock %}
+
+{% block bouclePostS %}
+    {% for p in PostS %}
+        <div class=" col-xs-12 col-sm-12 col-md-3 boxPostOx">
+            <div class="col-xs-12 col-sm-6 col-md-12 boxPost">
+                <div class="d-flex justify-content-between ">
+                    <div class="col-xs-3 col-sm-3 col-md-3 imageUser">
+                        {% block usernameImagePost %}
+                            <img class="img-fluid" src="../assets/image/{{ p.pdp }}">
+                        {% endblock %}
+                    </div>
+                    <div class="col-xs-7 col-sm-7 col-md-7 NomUser">
+                        {% block usernamePost %}
+                            {{ p.nom|capitalize }} {{ p.prenom|capitalize }}
+                        {% endblock %}
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 DetOx">
+                        <div>
+                            {% block DetOxPost %}
+                                <span class="detailOx">{{ p.quantite }}L</span>
+                            {% endblock %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 imageBox">
+                        {% block imagePost %}
+                            <img class="img-fluid"src="../assets/image/{{ p.image }}">
+                        {% endblock %}
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 titreBox">
+                        {% block TitrePost %}
+                            {{ p.titre }}
+                        {% endblock %}
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12 NumTel">
+                        <i class="fa fa-phone-alt fa-sm" aria-hidden="true" style="color: #D3D3D3"></i>
+                        <span> {% block NumTelPost %}{{ p.num_tel }}{% endblock %}</span>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12 NumTel">
+                        <i class="fa fa-location-arrow fa-sm" aria-hidden="true" style="color: #D3D3D3"></i>
+                        <span>{{ p.adresse }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 Prix">
+
+
+                        <h6>
+                            {% if  p.prix != 0  %}
+                                <i class="fa fa-dollar-sign fa-sm" aria-hidden="true" style="color: #D3D3D3"></i>
+                                {{ p.prix }}Dt <span class="PrixJr">Par jour</span>
+                            {% else %}
+
+                                <i class="fa fa-dollar-sign fa-sm" aria-hidden="true" style="color: #D3D3D3"></i>
+                                Gratuit !
+                            {% endif %}
+                        </h6>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

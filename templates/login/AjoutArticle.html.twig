@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Ajouter une publication{% endblock %}
+{% block bodyStyle %} style="background-color:#F5F5F5;" {% endblock %}
+{% block navAcc %}nav-item{% endblock %}
+{% block navSignIn %}"nav-item active"{% endblock %}
+{% block BoxOx %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 ProfilDet">
+                <div class="col-md-12 BoxProfilDet d-flex align-items-center ">
+
+                    <div class="imgProfil"  style="width:100%;">
+                        <img style="border-radius: 100%;border:8px white solid;overflow:hidden; height:162px; width:162px;object-fit: cover;" class="img-fluid" src="assets/image/{{ User.pdp }}">
+
+                    </div>
+                    <div class="col-md-10">
+                        <div class="col-md-12 ProfilName">{{ User.nom|capitalize }} {{ User.prenom|capitalize }}</div>
+                        <div class="col-md-12 ProfolTel">{{ User.numTel|capitalize }} </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class=" col-xs-12 col-sm-12 col-md-12" style="padding-top: 50px;">
+            <div class="row">
+
+                <div class="col-md-12 ProfolTel" style="padding-bottom: 20px;">
+                    <h2 class="PubText">Ajouter une publication</h2>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 RowBoxAjout">
+                    <div class="row">
+                        <div class="col-md-8 BoxAjoutArt">
+                        <div class="alert alert-warning" role="alert">
+                            <h5 class="col-md-12 Alert">* important ! Si votre offre est gratuit tapez 0 dans le champs des prix</h5>
+                        </div>
+
+                    {{ form_start(form, {'attr':{'novalidate':'novalidate'}})}}
+
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_label(form.adresse, "mail") }}
+                            {{ form_widget(form.adresse, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.adresse, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                        <div class="form-group col">
+                            {{ form_label(form.image, "prenom") }}
+                            {{ form_widget(form.image, {'id': 'imageUpload','attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.image, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_label(form.adresse, "mail") }}
+                            {{ form_widget(form.adresse, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.adresse, {'attr': {'class': 'erreurForm'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_label(form.quantite, "quantite") }}
+                            {{ form_widget(form.quantite, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.quantite, {'attr': {'class': 'erreurForm'}}) }}
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            {{ form_label(form.prix, "prix") }}
+                            {{ form_widget(form.prix, {'attr': {'class': 'form-control' }}) }}
+                            {{ form_errors(form.prix, {'attr': {'class': 'erreurForm'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-btn">
+                            {{ form_widget(form.Ajouter, {'attr': {'class': 'col btn btn-primary' }}) }}
+                        </div>
+                    </div>
+
+
+                    {{ form_end(form) }}
+                    </div>
+                        <div class="col-md-4 BoxImageAjout" style="padding-top:30px">
+                        <img id="imagePreview"  class="img-fluid ImgBoxAjout"src="{{ asset('assets/image/tunisie.jpg') }}">
+
+
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script>
+        $(document).ready(function(){
+
+            $("#imageUpload").change(function(data){
+
+                var imageFile = data.target.files[0];
+                var reader = new FileReader();
+                reader.readAsDataURL(imageFile);
+
+                reader.onload = function(evt){
+                    $('#imagePreview').attr('src', evt.target.result);
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+
+            });
+
+
+
+        });
+    </script>
+{% endblock %}

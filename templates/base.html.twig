@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="assets/css/style.css" media="all">
+            <link rel="stylesheet" href="assets/icon/css/all.min.css" media="all">
+            <link rel="stylesheet" href="assets/icon/css/brands.min.css" media="all">
+            <link rel="stylesheet" href="assets/icon/css/v4-shims.min.css" media="all">
+            <link rel="stylesheet" href="assets/icon/css/all.min.css" media="all">
+            <link rel="stylesheet" href="assets/icon/css/fontawesome.css" media="all">
+            <link rel="stylesheet" href="assets/css/reset.css">
+            <link rel="stylesheet" href="assets/css/menu.css">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script src="assets/icon/js/all.min.js"></script>
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.validate.min.js"></script>
+            <script src="assets/js/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="assets/js/manaaniFnct.js"></script>
+            <script src="assets/js/main.js"></script>
+
+        {% endblock %}
+    </head>
+    <body {% block bodyStyle %} style="background-color:#F5F5F5;" {% endblock %}>
+        {% block navbar %}
+            <div class="container-fluid">
+
+                <nav class="navbar fixed-top navbar-expand-lg navbar-light ">
+                    <a class="navbar-brand" href="#">
+                        <img class="img-fluid logomanaani" src="assets/image/logo.png">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-lg-auto">
+                            <li class={% block navOx %}"nav-item"{% endblock %}>
+                                <a class="nav-link" href="{{ path('oxygene') }}">Oxygéne</a>
+                            </li>
+                            <li class={% block navCont %}"nav-item"{% endblock %}>
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                            {% if not app.user %}
+                            <li class={% block navSignIn %} "nav-item "{% endblock %}>
+                                <a class="nav-link" href="{{ path('login') }}">Se connecter</a>
+                            </li>
+
+                            <li class={% block navSignUp %}"nav-item"{% endblock %}>
+                                <a href="{{ path('inscription') }}" class="btn btn-primary">S'inscrire</a>
+                            </li>
+                            {% endif %}
+                            {% if app.user %}
+                                <li class={% block navUserBtnPtofil %}"nav-item dropdown"{% endblock %}>
+                                    <a href="{{ path('inscription') }}" class="btn btn-primary " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                        <div class="col-md-2" style="display: flex;justify-content: flex-start;">
+
+
+                                            <img class="imgBtnUser" {% block navUserImagePdpPtofil %}src="assets/image/154.png" {% endblock %}>
+
+                                        </div>
+                                        <div class="col-md-10 d-flex align-items-md-start">
+                                            <span class="UsernameBtn">
+                                                {% block navUserNamePtofil %}Hammami{% endblock %} <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ path('profil') }}" >
+                                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                            Profil
+                                        </a>
+
+                                        <a class="dropdown-item" href="{{ path('AjoutArticle') }}" >
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            Ajouter un article
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ path('logout') }}">
+                                            <i class="fa fa-arrow-alt-circle-right" aria-hidden="true"></i>
+
+                                            se déconnecter
+                                        </a>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                        </ul>
+
+                    </div>
+                </nav>
+
+            </div>
+
+        {% endblock %}
+        {% block BoxOx %}
+            <div class="container-fluid background-oxg" style="padding-top: 100px ">
+
+                <div class=" col-xs-12 col-sm-12 col-md-12">
+
+                    {% block textPub %}
+                    <h2 class="PubText">Votres publications</h2>
+                    {% endblock %}
+                    <div class="row">
+                        {% block bouclePostS %}
+
+                        <div class=" col-xs-12 col-sm-12 col-md-3 boxPostOx">
+                            <div class="col-xs-12 col-sm-6 col-md-12 boxPost">
+                                <div class="d-flex justify-content-between ">
+                                    <div class="col-xs-3 col-sm-3 col-md-3 imageUser">
+                                        {% block usernameImagePost %}
+                                            <img class="img-fluid" src="https://scontent.ftun15-1.fna.fbcdn.net/v/t1.6435-0/cp0/e15/q65/p320x320/48396571_1928172590635210_885352695697768448_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=85a577&efg=eyJpIjoiYiJ9&_nc_ohc=-sl08vO8i9UAX9-M3b-&_nc_ht=scontent.ftun15-1.fna&tp=3&oh=0cc70194746de1afba89365e4186e6b2&oe=60EA2B9A">
+                                        {% endblock %}
+                                    </div>
+                                    <div class="col-xs-7 col-sm-7 col-md-7 NomUser">
+                                        {% block usernamePost %}
+                                        Ikram Jelassi
+                                        {% endblock %}
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 DetOx">
+                                        <div>
+                                            {% block DetOxPost %}
+                                                <span class="detailOx">
+                                                    8L
+                                                </span>
+                                                {% endblock %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 imageBox">
+                                        {% block imagePost %}
+                                            <img class="img-fluid"src="https://scontent.ftun15-1.fna.fbcdn.net/v/t1.6435-0/cp0/e15/q65/p320x320/48396571_1928172590635210_885352695697768448_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=85a577&efg=eyJpIjoiYiJ9&_nc_ohc=-sl08vO8i9UAX9-M3b-&_nc_ht=scontent.ftun15-1.fna&tp=3&oh=0cc70194746de1afba89365e4186e6b2&oe=60EA2B9A">
+                                        {% endblock %}
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 titreBox">
+                                        {% block TitrePost %}
+                                        Mongi hammami Titre
+                                        {% endblock %}
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-12 NumTel">
+                                        <i class="fa fa-phone-alt fa-sm" aria-hidden="true" style="color: #D3D3D3"></i>
+                                        <span> {% block NumTelPost %}23 818 764{% endblock %}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-12 NumTel">
+                                        <i class="fa fa-location-arrow fa-sm" aria-hidden="true" style="color: #D3D3D3"></i>
+                                        <span>{% block AdressePost %}Areina{% endblock %}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 Prix">
+                                        <h6>
+                                            <i class="fa fa-dollar-sign fa-sm" aria-hidden="true" style="color: #D3D3D3"></i>
+                                            {% block PrixPost %}25{% endblock %} Dt <span class="PrixJr">Par jour</span>
+                                        </h6>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endblock %}
+
+
+                    </div>
+                    <div id=animationText>
+                        <span>  صحتي وصحتك امانة في بلاد
+                        </span>
+
+                        <div id=flip>
+                            <div>
+                                <div>ردوها جبانة
+                                </div>
+
+                            </div>
+                            <div><div>كلاو فيها حق اليتامى</div></div>
+                            <div><div>القمع و الاهانة</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        {% block backTop %}
+            <a id="BackTop"></a>
+        {% endblock %}
+
+    </body>
+
+
+
+
+</html>
