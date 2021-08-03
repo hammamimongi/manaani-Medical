@@ -6,6 +6,9 @@
 ### Interface Sign Up 
 ![manaani](https://user-images.githubusercontent.com/79050870/128078385-00a53a57-4193-4dfe-96ac-364835d119e2.png)
 ### Interface Accueil & oxygene  
+![Capture](https://user-images.githubusercontent.com/79050870/128094621-788ad4e2-cf76-4c01-8765-5b80f7a8353d.PNG)
+![Capture1](https://user-images.githubusercontent.com/79050870/128094648-903996d7-865d-4802-bed0-888aff9f3ad7.PNG)
+
 je vous présente le projet .
 ### MANNANI
 une application web qui consiste à aider les autres  à trouver des concentrateur d'oxygène avec prix raisonnable
